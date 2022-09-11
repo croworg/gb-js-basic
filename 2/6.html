@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Необязательное задание.
+
+Необходимо реализовать функцию, которая будет принимать первым аргументом
+целое положительное число, в следующих трех аргументах функция принимает слова
+в разных склонениях.
+Функция должна возвращать одно из трех переданных в параметры слов подходящее
+под число, которое передано первым аргументом.
+
+Пример:
+console.log(declinationOfNumber(1, "яблоко", "яблока", "яблок")); // "яблоко"
+console.log(declinationOfNumber(2, "мяч", "мяча", "мячей")); // "мяча"
+console.log(declinationOfNumber(5, "стул", "стула", "стульев")); // "стульев"
+
+Функция должна работать с любым словом и любым целым положительным числом.
+Все аргументы, которые будут передаваться функции будут верны.
+-->
+<script>
+  "use strict";
+
+  /**
+   * Функция возвращает нужное склонение слова в зависимости от передаваемого
+   * числа.
+   * @param {number} count Количество штук (положительное число).
+   * @param {string} one Название в первом склонении.
+   * @param {string} two Название во втором склонении.
+   * @param {string} five Название в третьем склонении.
+   * @returns {string} Возвращает слово в одном из склонений.
+   */
+  function declinationOfNumber(count, one, two, five) {
+    if (count <= 0) {
+      return '';
+    }
+
+    const last2Digits = count % 100;
+    if (last2Digits > 10 && last2Digits < 15) {
+      return five;
+    }
+
+    const lastDigit = last2Digits % 10;
+    if (lastDigit === 1) {
+      return one;
+    } else if (lastDigit > 1 && lastDigit <5) {
+      return two;
+    } else {
+      return five;
+    }
+  }
+
+  const fruits = [
+    ["яблоко", "яблока", "яблок"],
+    ["груша", "груши", "груш"],
+    ["слива", "сливы", "слив"],
+    ["банан", "банана", "бананов"],
+    ["помидор", "помидора", "помидоров"],
+  ]
+  for (let i = 0; i < fruits.length; ++i) {
+    const fruitCount = Math.trunc(Math.random() * 1000 / 5);
+    const fruit = declinationOfNumber(
+      fruitCount, fruits[i][0], fruits[i][1], fruits[i][2]
+    );
+    console.log(`У меня есть ${fruitCount} ${fruit}.`);
+  }
+
+</script>
+</body>
+</html>
