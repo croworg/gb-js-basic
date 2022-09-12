@@ -24,12 +24,12 @@
   const a = +prompt("Введите число A:");
   const b = +prompt("Введите число B:");
 
-  if (!isNaN(a) && !isNaN(b)) {
+  if (!Number.isNaN(a) && !Number.isNaN(b)) {
     if (a > 0 && b > 0) {
       console.log(a - b);
     } else if (a < 0 && b < 0) {
       console.log(a * b);
-    } else {
+    } else if ((a > 0 && b < 0) || (a < 0 && b > 0)) {
       console.log(a + b);
     }
   }

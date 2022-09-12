@@ -47,7 +47,7 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
     const lastDigit = last2Digits % 10;
     if (lastDigit === 1) {
       return one;
-    } else if (lastDigit > 1 && lastDigit <5) {
+    } else if (lastDigit > 1 && lastDigit < 5) {
       return two;
     } else {
       return five;
@@ -55,11 +55,11 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
   }
 
   const fruits = [
-    ["яблоко", "яблока", "яблок"],
-    ["груша", "груши", "груш"],
-    ["слива", "сливы", "слив"],
-    ["банан", "банана", "бананов"],
-    ["помидор", "помидора", "помидоров"],
+    ['яблоко', 'яблока', 'яблок'],
+    ['груша', 'груши', 'груш'],
+    ['слива', 'сливы', 'слив'],
+    ['банан', 'банана', 'бананов'],
+    ['помидор', 'помидора', 'помидоров'],
   ]
   for (let i = 0; i < fruits.length; ++i) {
     const fruitCount = Math.trunc(Math.random() * 1000 / 5);
