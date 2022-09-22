@@ -54,12 +54,12 @@
   function PostES5(author, text) {
     this.author = author;
     this.text = text;
-    this.dateStamp = new Date().toLocaleString('ru-RU');
+    this.dateStamp = new Date();
   }
 
   PostES5.prototype.edit = function (newText) {
     this.text = newText;
-    this.dateStamp = new Date().toLocaleString('ru-RU');
+    this.dateStamp = new Date();
   };
 
   const post1 = new PostES5('Ivan', 'Hello there!');
@@ -78,7 +78,7 @@
 
   AttachedPostES5.prototype.makeTextHighlighted = function () {
     this.highlighted = true;
-    this.dateStamp = new Date().toLocaleString('ru-RU');
+    this.dateStamp = new Date();
   };
 
   const attachedPost1 = new AttachedPostES5(post1.author, post1.text);
@@ -110,10 +110,7 @@
 
 
   class AttachedPostES6 extends PostES6 {
-    constructor(author, text) {
-      super(author, text );
-      this.highlighted = false;
-    }
+    highlighted = false;
 
     makeTextHighlighted() {
       this.highlighted = true;

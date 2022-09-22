@@ -42,6 +42,7 @@
       this.name = name;
       this.price = price;
     }
+
     make25Discount() {
       this.price *= .75;
     }
@@ -49,7 +50,7 @@
 
   const apple = new ProductES6('Apple', 15);
   console.log(`Name: ${apple.name}, price: ${apple.price}`);
-  apple.make25Discount()
+  apple.make25Discount();
   console.log(`Name: ${apple.name}, discount-price: ${apple.price}`);
 
 </script>
