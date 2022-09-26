@@ -78,6 +78,11 @@
   которому был совершен клик.
   Необходимо использовать делегирование.
   */
+  document.addEventListener('click', event => {
+    let isSuper = event.target.classList.contains('super_element')
+      ? 'присутствует' : 'отсутствует';
+    console.log(`Класс "super_element" ${isSuper} в элементе "${event.target.tagName.toLowerCase()}".`);
+  });
 
 
   /*
@@ -96,11 +101,13 @@
   Если клик был не по кнопке, то ничего выводить не нужно.
   Необходимо использовать делегирование.
    */
-  document.querySelector('ul').addEventListener('click', event => {
-    if (event.target.tagName === "BUTTON") {
-      console.log(event.target.textContent);
-    }
-  });
+  document
+    .querySelector('ul')
+    .addEventListener('click', event => {
+      if (event.target.tagName === "BUTTON") {
+        console.log(event.target.textContent);
+      }
+    });
 
 
   /*
@@ -108,6 +115,9 @@
   потом выводится текст из 3 задания, если мы кликаем по кнопкам в ul?
   Ответ необходимо написать здесь же, под этим комментарием, своими словами.
   */
+  /* Потому что событие в 3 задании вешается на весь документ и проверяется в
+  * самом конце при всплытии. А в задании 5 событие вешается на элемент 'ul'
+  * на которое и срабатывает */
 
 
   /*

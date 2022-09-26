@@ -74,7 +74,7 @@
   атрибут "aria-labelledby" равный "dropdownMenuButton" используя dataset.
    */
   document.querySelector('[aria-labelledby="dropdownMenuButton"]')
-    .setAttribute('data-dd', 3);
+    .dataset.dd = '3';
 
 
   /*
@@ -93,7 +93,7 @@
     .querySelector('.btn.dropdown-toggle')
     .attributes;
 
-  for (let attr of elAttrs) {
+  for (const attr of elAttrs) {
     console.log(`Атрибут "${attr.name}" содержит значение "${attr.value}"`);
   }
 
