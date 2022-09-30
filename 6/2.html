@@ -109,7 +109,6 @@
 
   formControlElems.forEach(control => {
     control.addEventListener('input', elem => {
-      console.log(elem);
       if (elem.target.value === '') {
         elem.target.classList.add('error');
       } else {
