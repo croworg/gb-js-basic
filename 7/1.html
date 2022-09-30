@@ -61,17 +61,19 @@
     H99: "Однако, программирование, в итоге, принесет свои плоды.",
   };
 
-  document.querySelector('.container').addEventListener('click', event => {
-    document.querySelectorAll('.nav-link').forEach(elem => {
-      elem.classList.remove('active');
-    });
-    if (event.target.classList.contains('nav-link')) {
-      event.target.classList.add('active');
-      document.querySelector('.text')
-        .textContent = panelText[event.target.parentElement.dataset.text];
+  let activeTab = document.querySelector('.active');
+  const textElem = document.querySelector('div.text');
+  document.querySelector('.nav-tabs').addEventListener('click', event => {
+    if (!event.target.classList.contains('nav-link')) {
+      return;
     }
+
+    activeTab.classList.remove('active');
+    event.target.classList.add('active');
+    activeTab = event.target;
+
+    textElem.textContent = panelText[event.target.parentElement.dataset.text];
   });
-  // Видел что в решении более элегантный вариант, но насколько криминален мой?
 
   /*
   2. Необходимо сделать так, чтобы при изменении input'а менялся и размер шрифта
@@ -83,11 +85,9 @@
   const inputDiv = document.getElementById('inputDiv');
   inputElem.value = Number.parseInt(
           getComputedStyle(inputDiv).fontSize).toString();
-  // Установку значения тоже в решении подсмотрел, сначала сделал без нее.
   inputElem.addEventListener('input', e => {
     document.getElementById('inputDiv').style.fontSize = e.target.value + 'px';
   });
-
 
 </script>
 </body>
