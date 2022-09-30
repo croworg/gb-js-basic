@@ -40,10 +40,10 @@
   const starsContainer = document.querySelector('.stars_container');
 
   starsContainer.addEventListener('mouseover', event => {
-    let star = event.target;
-    if (!star.classList.contains('fa-star')) {
+    if (!event.target.classList.contains('fa-star')) {
       return;
     }
+    let star = event.target;
     do {
       star.classList.add('golden');
       star = star.previousElementSibling;
@@ -55,10 +55,10 @@
   задания должны быть удалены.
    */
   starsContainer.addEventListener('mouseout', event => {
-    let star = event.target;
-    if (!star.classList.contains('fa-star')) {
+    if (!event.target.classList.contains('fa-star')) {
       return;
     }
+    let star = event.target;
     do {
       star.classList.remove('golden');
       star = star.previousElementSibling;
