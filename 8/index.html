@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+<!--    <script src="js/main.js" defer></script>-->
+    <script src="cart.js" defer></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="leftHeader">
+                <img src="домашнее_задание/images/logo.png" alt="">
+                <img class="searchIcon" src="домашнее_задание/images/search.png" alt="">
+            </div>
+
+            <div class="rightHeader">
+                <img src="домашнее_задание/images/bars.png" alt="">
+                <img class="userIcon" src="домашнее_задание/images/user.png" alt="">
+
+                <span class="cartIconWrap">
+                    <img class="cartIcon" src="домашнее_задание/images/cart.png" alt="">
+                    <span class="cartIconCount"></span>
+                </span>
+                <div class="cartBox" hidden>
+                    <header class="cartRow cartHeader">
+                        <div class="productName">Название товара</div>
+                        <div>Количество</div>
+                        <div class="productPrice">Цена за шт.</div>
+                        <div class="productTotal">Итого</div>
+                    </header>
+                    <div class="cartItems">
+
+                    </div>
+                    <footer class="cartTotal">
+                        Всего в корзине <span class="cartTotalItems"></span> товаров
+                        на сумму: <span class="cartTotalValue"></span>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="newArrivals">
+        <div class="container">
+            <h1>NEW ARRIVALS</h1>
+            <nav>
+                <a href="#">HOME</a>
+                <span>/</span>
+                <a href="#">MEN</a>
+                <span>/</span>
+                <a href="#">NEW ARRIVALS</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="filters">
+        <div class="container">
+            <div class="filtersLeft">
+                <span class="filterLabel">FILTER</span>
+                <img class="filterIcon" src="домашнее_задание/images/filter.svg" alt="">
+                <div class="filterPopup hidden">
+                    <nav class="filterCategory">
+                        <div class="filterCategoryHeader">CATEGORY</div>
+                        <div class="hidden">
+                            <a href="#">Accessories</a>
+                            <a href="#">Bags</a>
+                            <a href="#">Denim</a>
+                            <a href="#">Hoodies & Sweatshirts</a>
+                            <a href="#">Jackets & Coats</a>
+                            <a href="#">Polos</a>
+                            <a href="#">Shirts</a>
+                            <a href="#">Shoes</a>
+                            <a href="#">Sweaters & Knits</a>
+                            <a href="#">T-Shirts</a>
+                            <a href="#">Tanks</a>
+                        </div>
+                    </nav>
+                    <nav class="filterCategory">
+                        <div class="filterCategoryHeader">BRAND</div>
+                        <div class="hidden">
+                            <a href="#">Accessories</a>
+                            <a href="#">Bags</a>
+                            <a href="#">Denim</a>
+                            <a href="#">Hoodies & Sweatshirts</a>
+                            <a href="#">Jackets & Coats</a>
+                            <a href="#">Polos</a>
+                            <a href="#">Shirts</a>
+                            <a href="#">Shoes</a>
+                            <a href="#">Sweaters & Knits</a>
+                            <a href="#">T-Shirts</a>
+                            <a href="#">Tanks</a>
+                        </div>
+                    </nav>
+                    <nav class="filterCategory">
+                        <div class="filterCategoryHeader">DESIGNER</div>
+                        <div class="hidden">
+                            <a href="#">Accessories</a>
+                            <a href="#">Bags</a>
+                            <a href="#">Denim</a>
+                            <a href="#">Hoodies & Sweatshirts</a>
+                            <a href="#">Jackets & Coats</a>
+                            <a href="#">Polos</a>
+                            <a href="#">Shirts</a>
+                            <a href="#">Shoes</a>
+                            <a href="#">Sweaters & Knits</a>
+                            <a href="#">T-Shirts</a>
+                            <a href="#">Tanks</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="filtersRight">
+                <div class="filterTrending">
+                    TRENDING NOW
+                    <img src="домашнее_задание/images/filterArrow.svg" alt="">
+                </div>
+                <div class="filterSize">
+                    <div class="filterSizeWrap">
+                        SIZE
+                        <img src="домашнее_задание/images/filterArrow.svg" alt="">
+                    </div>
+                    <div class="filterSizes hidden">
+                        <div>
+                            <input type="checkbox"> XS
+                        </div>
+                        <div>
+                            <input type="checkbox"> S
+                        </div>
+                        <div>
+                            <input type="checkbox"> M
+                        </div>
+                        <div>
+                            <input type="checkbox"> L
+                        </div>
+                    </div>
+                </div>
+                <div class="filterPrice">
+                    PRICE
+                    <img src="домашнее_задание/images/filterArrow.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="featured container">
+        <h2 class="featuredHeader">Fetured Items</h2>
+        <div class="featuredTitle">Shop for items based on what we featured in this week</div>
+
+        <div class="featuredItems">
+            <div class="featuredItem" data-id="1" data-name="ELLERY J M'O CAPSULE" data-price="57.12">
+
+                <div class="featuredImgWrap">
+                    <img src="домашнее_задание/images/featured/1.jpg" alt="">
+                    <div class="featuredImgDark">
+                        <button class="addToCart">
+                            <img src="домашнее_задание/images/cart.svg" alt="">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="featuredData">
+                    <div class="featuredName">
+                        ELLERY J M'O CAPSULE
+                    </div>
+                    <div class="featuredText">
+                        Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
+                        teams
+                        up with Moda Operandi.
+                    </div>
+                    <div class="featuredPrice">
+                        $57.00
+                    </div>
+                </div>
+
+            </div>
+            <div class="featuredItem" data-id="2" data-name="ELLERY S M'O CAPSULE" data-price="66.09">
+
+                <div class="featuredImgWrap">
+                    <img src="домашнее_задание/images/featured/2.jpg" alt="">
+                    <div class="featuredImgDark">
+                        <button class="addToCart">
+                            <img src="домашнее_задание/images/cart.svg" alt="">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="featuredData">
+                    <div class="featuredName">
+                        ELLERY S M'O CAPSULE
+                    </div>
+                    <div class="featuredText">
+                        Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
+                        teams
+                        up with Moda Operandi.
+                    </div>
+                    <div class="featuredPrice">
+                        $66.00
+                    </div>
+                </div>
+
+            </div>
+            <div class="featuredItem" data-id="3" data-name="ELLERY F M'O CAPSULE" data-price="58.23">
+
+                <div class="featuredImgWrap">
+                    <img src="домашнее_задание/images/featured/3.jpg" alt="">
+                    <div class="featuredImgDark">
+                        <button class="addToCart">
+                            <img src="домашнее_задание/images/cart.svg" alt="">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="featuredData">
+                    <div class="featuredName">
+                        ELLERY F M'O CAPSULE
+                    </div>
+                    <div class="featuredText">
+                        Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
+                        teams
+                        up with Moda Operandi.
+                    </div>
+                    <div class="featuredPrice">
+                        $58.00
+                    </div>
+                </div>
+
+            </div>
+            <div class="featuredItem" data-id="4" data-name="ELLERY Z M'O CAPSULE" data-price="44.75">
+
+                <div class="featuredImgWrap">
+                    <img src="домашнее_задание/images/featured/4.jpg" alt="">
+                    <div class="featuredImgDark">
+                        <button class="addToCart">
+                            <img src="домашнее_задание/images/cart.svg" alt="">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="featuredData">
+                    <div class="featuredName">
+                        ELLERY Z M'O CAPSULE
+                    </div>
+                    <div class="featuredText">
+                        Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
+                        teams up with Moda Operandi.
+                    </div>
+                    <div class="featuredPrice">
+                        $44.00
+                    </div>
+                </div>
+
+            </div>
+            <div class="featuredItem" data-id="5" data-name="ELLERY Y M'O CAPSULE" data-price="50.82">
+
+                <div class="featuredImgWrap">
+                    <img src="домашнее_задание/images/featured/5.jpg" alt="">
+                    <div class="featuredImgDark">
+                        <button class="addToCart">
+                            <img src="домашнее_задание/images/cart.svg" alt="">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="featuredData">
+                    <div class="featuredName">
+                        ELLERY Y M'O CAPSULE
+                    </div>
+                    <div class="featuredText">
+                        Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
+                        teams
+                        up with Moda Operandi.
+                    </div>
+                    <div class="featuredPrice">
+                        $50.00
+                    </div>
+                </div>
+
+            </div>
+            <div class="featuredItem" data-id="6" data-name="ELLERY X M'O CAPSULE" data-price="52.95">
+
+                <div class="featuredImgWrap">
+                    <img src="домашнее_задание/images/featured/6.jpg" alt="">
+                    <div class="featuredImgDark">
+                        <button class="addToCart">
+                            <img src="домашнее_задание/images/cart.svg" alt="">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="featuredData">
+                    <div class="featuredName">
+                        ELLERY X M'O CAPSULE
+                    </div>
+                    <div class="featuredText">
+                        Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
+                        teams
+                        up with Moda Operandi.
+                    </div>
+                    <div class="featuredPrice">
+                        $52.00
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="pagination">
+            <a href="#">
+                <img src="домашнее_задание/images/chevronLeft.svg" alt="">
+            </a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6.....20</a>
+            <a href="#">
+                <img src="домашнее_задание/images/chevronRight.svg" alt="">
+            </a>
+        </div>
+    </div>
+
+    <div class="services">
+        <div class="container">
+
+            <div class="serivceUnit">
+                <img src="домашнее_задание/images/services/delivery.svg" alt="">
+                <div class="servicesTitle">
+                    Free Delivery
+                </div>
+                <div class="servicesText">
+                    Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.
+                </div>
+            </div>
+
+            <div class="serivceUnit">
+                <img src="домашнее_задание/images/services/discount.svg" alt="">
+                <div class="servicesTitle">
+                    Sales & discounts
+                </div>
+                <div class="servicesText">
+                    Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.
+                </div>
+            </div>
+
+            <div class="serivceUnit">
+                <img src="домашнее_задание/images/services/assurance.svg" alt="">
+                <div class="servicesTitle">
+                    Quality assurance
+                </div>
+                <div class="servicesText">
+                    Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="subscribe">
+        <div class="container">
+
+            <div class="subscribeLeft">
+                <img src="домашнее_задание/images/subscribeUser.png" alt="">
+                <div class="subscribeUserText">
+                    “Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus condimentum“
+                </div>
+            </div>
+
+            <div class="subscribeRight">
+                <div class="subscribeTitle">
+                    SUBSCRIBE
+                </div>
+                <div class="subscribeText">
+                    FOR OUR NEWLETTER AND PROMOTION
+                </div>
+                <form action="" class="subscribeForm">
+                    <input type="text" placeholder="Enter Your Email">
+                    <button>Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="footerLeft">
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-pinterest-p"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            <div class="footerRight">
+                &copy; 2021  Brand  All Rights Reserved.
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
